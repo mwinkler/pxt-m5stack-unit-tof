@@ -1,0 +1,14 @@
+{
+    "name": "m5stack-unit-tof",
+    "version": "1.0.0",
+    "description": "M5Stack ToF Unit (VL53L0X)",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "public": true
+}
