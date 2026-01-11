@@ -600,39 +600,6 @@ namespace m5tof {
     }
 
     /**
-     * Read the current I2C address of the sensor
-     */
-    //% blockId=m5tof_read_i2c_address
-    //% block="ToF I2C address"
-    //% weight=40
-    //% blockGap=8
-    //% advanced=true
-    export function readI2CAddress(): number {
-        return readReg8(I2C_SLAVE_DEVICE_ADDRESS)
-    }
-
-    /**
-     * Change the I2C address of the sensor
-     * @param newAddress New I2C address (0x08-0x77)
-     */
-    //% blockId=m5tof_change_i2c_address
-    //% block="change ToF I2C address to %newAddress"
-    //% newAddress.min=0x08 newAddress.max=0x77
-    //% weight=39
-    //% blockGap=8
-    //% advanced=true
-    export function changeI2CAddress(newAddress: number): boolean {
-        if (newAddress < 0x08 || newAddress > 0x77) {
-            return false
-        }
-        if (writeReg8(I2C_SLAVE_DEVICE_ADDRESS, newAddress)) {
-            currentAddress = newAddress
-            return true
-        }
-        return false
-    }
-
-    /**
      * Check if the sensor is properly connected
      */
     //% blockId=m5tof_is_connected
